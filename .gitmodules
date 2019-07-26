@@ -1,0 +1,3 @@
+[submodule ".dotmgr"]
+	path = .dotmgr
+	url = https://github.com/esalipe/dotmgr.git
