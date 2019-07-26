@@ -9,7 +9,9 @@ bash_dotfiles_dir="${HOME}/.bash"
 
 if [[ -d "${bash_dotfiles_dir}" ]]; then
     for file in "${bash_dotfiles_dir}"/*; do
-        source "${file}"
+        if [[ -f ${file} ]]; then
+            source "${file}"
+        fi
     done
 fi
 
@@ -18,6 +20,8 @@ extraconfig_dotfiles_dir="${bash_dotfiles_dir}/extra-config"
 
 if [[ -d "${extraconfig_dotfiles_dir}" ]]; then
     for file in "${extraconfig_dotfiles_dir}"/*; do
-        source "${file}"
+        if [[ -f ${file} ]]; then
+            source "${file}"
+        fi
     done
 fi
