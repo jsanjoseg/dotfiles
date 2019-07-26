@@ -17,11 +17,11 @@ if [[ -d "${bash_dotfiles_dir}" ]]; then
     done
 fi
 
-# Source extra configuration files from dotfiles directory
-extraconfig_dotfiles_dir="${bash_dotfiles_dir}/extra-config"
+# Source external configuration files from dotfiles directory
+external_dotfiles_dir="${bash_dotfiles_dir}/external"
 
-if [[ -d "${extraconfig_dotfiles_dir}" ]]; then
-    for file in "${extraconfig_dotfiles_dir}"/*; do
+if [[ -d "${external_dotfiles_dir}" ]]; then
+    for file in "${external_dotfiles_dir}"/*; do
         if [[ -f ${file} ]]; then
             source "${file}"
         fi
