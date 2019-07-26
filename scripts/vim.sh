@@ -27,7 +27,7 @@ function install_vim() {
         __log_info "VIM 8: Not installed"
         echo
         echo "Downloading and compiling VIM 8"
-        build_directory="${HOME}/buildvim8"
+        build_directory="${HOME}/vim8"
         git clone https://github.com/vim/vim "${build_directory}"
         cd "${build_directory}"
         ./configure --prefix="${HOME}/.local/"
