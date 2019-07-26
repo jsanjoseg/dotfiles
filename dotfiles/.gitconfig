@@ -2,6 +2,7 @@
     editor = vim
 
 [alias]
+    prom = pull --rebase origin master
     lol = log --oneline --graph --decorate
     ci = commit -a
     cian = commit -a --amend --no-edit

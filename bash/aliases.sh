@@ -6,3 +6,5 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias grep='grep --color=auto'
+
+alias gprom="git prom"
