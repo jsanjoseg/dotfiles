@@ -4,6 +4,12 @@ if ! empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 
+" Load external configuration
+if ! empty(glob('~/.vimrc.external'))
+    source ~/.vimrc.external
+endif
+
+
 "========== General ==========
 
 " Don't be compatible with vi, so everything will work fine
