@@ -38,3 +38,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Remap Caps_Lock to Ctrl
+setxkbmap -layout us -option ctrl:nocaps
+
+# Restore original US keyboard layout
+#setxkbmap -layout us

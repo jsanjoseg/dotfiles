@@ -121,6 +121,10 @@ inoremap jk <Esc>
 " (so we don't skip long lines that are wrapped into two or more lines)
 nnoremap j gj
 nnoremap k gk
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
 " Turn off search highlighting
 " (disabled: in conflict with Ale, <CR> is not placing the cursor
