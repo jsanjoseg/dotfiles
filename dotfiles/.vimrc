@@ -110,9 +110,6 @@ command LL :call s:LoclistToggle()
 
 
 "========== Key Remaps ==========
-
-" TODO: Remap ctrl key to caps lock key
-
 " Esc remap
 " (Esc is too far away to be confortable)
 inoremap jk <Esc>
@@ -121,6 +118,8 @@ inoremap jk <Esc>
 " (so we don't skip long lines that are wrapped into two or more lines)
 nnoremap j gj
 nnoremap k gk
+
+" Move cursor in insert mode (j and k are mapped to the visual line mapping)
 inoremap <C-j> <C-o>j
 inoremap <C-k> <C-o>k
 inoremap <C-h> <Left>
