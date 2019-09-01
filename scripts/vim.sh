@@ -23,7 +23,7 @@ function install_vim() {
         return
     fi
 
-    if ! vim --version | head -n1 | grep -E "^.*IMproved 8.*" &> /dev/null; then
+    if ! dpkg-query -W --showformat='${Version}\n' "vim"| grep "2:8." &> /dev/null; then
         __log_info "VIM 8: Not installed"
         echo
         echo "Downloading and compiling VIM 8"
