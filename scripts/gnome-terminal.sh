@@ -15,8 +15,10 @@ function install_gnome_terminal_profile() {
         return
     fi
 
-    __log_warning "dconf utility not found. Skipping..."
-    return
+    if ! dpkg-query -W "dconf*" | grep -E "^dconf\s" &> /dev/null; then
+        __log_warning "dconf utility not found. Skipping..."
+        return
+    fi
 
     # Create backup of the current profile
     if ! dconf dump /org/gnome/terminal/legacy/profiles:/ > \
