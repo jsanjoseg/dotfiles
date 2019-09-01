@@ -40,7 +40,9 @@ if ! shopt -oq posix; then
 fi
 
 # Remap Caps_Lock to Ctrl
-setxkbmap -layout us -option ctrl:nocaps
+if [[ $(command -v setxkbmap) ]]; then
+    setxkbmap -layout us -option ctrl:nocaps
+fi
 
 # Restore original US keyboard layout
 #setxkbmap -layout us
