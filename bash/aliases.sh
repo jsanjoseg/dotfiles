@@ -8,3 +8,4 @@ alias l='ls -CF'
 alias grep='grep --color=auto'
 
 alias gprom="git prom"
+alias glol="git lol"
