@@ -30,7 +30,7 @@ font pango:monospace 9
 floating_modifier $mod
 
 # Start a terminal
-# - For Ubuntu, this will end with a gnome-terminal
+# - For Ubuntu, i3-sensible-terminal will end with a gnome-terminal
 # - To be sure, set TERMINAL
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -130,10 +130,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ntilde resize grow width 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -173,9 +173,6 @@ mode "$mode_system" {
 }
 bindsym $mod+Escape mode "$mode_system"
 
-# TODO: menu for manual management of external displays
-# https://wiki.archlinux.org/index.php/i3#External_displays_manual_management
-
 # Change desktop wallpaper color
 exec --no-startup-id xsetroot -solid "#002244"
 
@@ -185,19 +182,16 @@ exec --no-startup-id nm-applet
 # Configure touchpad
 exec $HOME/.config/i3/touchpad.sh
 
-# Keyboard layout
-# - English
-# - Caps Lock as Control
+# Configure keyboard layout
 exec "setxkbmap -layout us -option ctrl:nocaps"
 
 # Detect if laptop screen is open/closed, to show a workspace there
 # Use autoxrandr for this
+# TODO: menu for manual management of external displays
+# https://wiki.archlinux.org/index.php/i3#External_displays_manual_management
 
 # Audio configuration
 # Install pavucontrol to control audio devices graphically
-# Use @DEFAULT_SINK@ to automatically choose between internal speakers or connected headphones
-# Use @DEFAULT_SOURCE@ to automatically choose between internal microphone or connected headphone microphone
-
 # Increase audio volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
 # Decrease audio volume
