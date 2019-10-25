@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -euo pipefail
+
+function install_i3() {
+    install_packages i3
+}
+
+echo
+echo "Installing i3 WM"
+install_i3
