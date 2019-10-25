@@ -173,6 +173,9 @@ mode "$mode_system" {
 }
 bindsym $mod+Escape mode "$mode_system"
 
+# Focus does not follow mouse
+focus_follows_mouse no
+
 # Change desktop wallpaper color
 exec --no-startup-id xsetroot -solid "#002244"
 
