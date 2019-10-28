@@ -188,10 +188,8 @@ exec $HOME/.config/i3/touchpad.sh
 # Configure keyboard layout
 exec "setxkbmap -layout us -option ctrl:nocaps"
 
-# Detect if laptop screen is open/closed, to show a workspace there
-# Use autoxrandr for this
-# TODO: menu for manual management of external displays
-# https://wiki.archlinux.org/index.php/i3#External_displays_manual_management
+# Detect screen configuration (docked/undocked)
+exec --no-startup-id autorandr --change
 
 # Audio configuration
 # Install pavucontrol to control audio devices graphically
