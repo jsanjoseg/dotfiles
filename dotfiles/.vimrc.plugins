@@ -11,11 +11,9 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'vim-airline/vim-airline'
 Plug 'pearofducks/ansible-vim'
 Plug 'arcticicestudio/nord-vim'
-"Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
-"Plug 'scrooloose/syntastic'
 call plug#end()
 
 
@@ -48,38 +46,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 noremap <silent> <C-k> :call smooth_scroll#up(&scroll, 15, 2)<CR>
 noremap <silent> <C-j> :call smooth_scroll#down(&scroll, 15, 2)<CR>
-
-
-"========== YouCompleteMe ===========
-
-" Scroll without auto-insertion using Up/Down (intro to select)
-" Scroll with auto-insertion using C-p/C-u (C-x to select)
-"let g:ycm_key_list_select_completion = ['']
-"let g:ycm_key_list_previous_completion = ['']
-"To try
-"let g:ycm_key_list_select_completion = ['<TAB>']
-"let g:ycm_key_list_previous_completion = ['<S-TAB>']
-"let g:ycm_key_list_stop_completion = ['<C-y>', '<UP>', '<DOWN>']
-"let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
-
-
-"========== vim-instant-markdown =========
-"
-" Disable autostart (:InstantMarkdownPreview to show the file)
-"let g:instant_markdown_autostart = 0
-
-
-"========== Syntastic ==========
-
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"
-"let g:syntastic_enable_signs = 1
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
 
 
 "========== Ale ==========
