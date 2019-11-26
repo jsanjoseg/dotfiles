@@ -31,6 +31,7 @@ function install_vim() {
         git clone https://github.com/vim/vim "${build_directory}"
         cd "${build_directory}"
         ./configure --prefix="${HOME}/.local/"
+        # To uninstall vim8 and go back to the system vim, make uninstall
         make install
     fi
     __log_success "VIM 8: Installed"
