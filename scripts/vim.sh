@@ -9,6 +9,12 @@ set -euo pipefail
 
 function install_vim() {
     local packages_not_installed=()
+    basic_packages_list+=(libncurses5
+                          libncurses5-dev
+                          libncursesw5
+                          gcc
+                          make)
+
     for package in "${basic_packages_list[@]}"; do
         if ! check_package "${package}"; then
             __log_info "${package}: Not installed"
@@ -20,6 +26,7 @@ function install_vim() {
     if [ ${#packages_not_installed[@]} -ne 0 ]; then
         __log_warning "VIM 8: Basic packages are not installed. Skipping..."
         __log_warning "       Please use --basic-packages in addition to -s vim"
+        __log_warning "       and also install mentioned packages"
         return
     fi
 
