@@ -160,7 +160,7 @@ bar {
         status_command i3status
         workspace_buttons yes
         separator_symbol "|"
-        tray_output primary
+#        tray_output primary
 }
 
 set $Locker i3lock -e -c 000000 && sleep 1
@@ -211,9 +211,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Move Spotify to another workspace by default
 for_window [class="Spotify"] move to workspace 10
 
-# Move Evolution to another workspace by default
-for_window [class="Evolution"] move to workspace 8
-
 # Move Pidgin to another workspace by default
 for_window [class="Pidgin"] move to workspace 9
 
+# Move Evolution to another workspace by default
+for_window [class="Evolution"] move to workspace 8
+
+# Move Teams to another workspace by default
+for_window [class="Teams"] move to workspace 7
