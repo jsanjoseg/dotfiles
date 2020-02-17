@@ -14,6 +14,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 

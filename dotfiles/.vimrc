@@ -137,3 +137,6 @@ inoremap {<cr> {<cr>}<c-o><s-o>
 " Copy text, from cursor position to the end-of-line
 " (to be consistent with C and D operators)
 nnoremap Y y$
+
+" goto buffer
+nnoremap gb :ls<CR>:b<Space>
