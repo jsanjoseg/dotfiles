@@ -9,6 +9,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'pearofducks/ansible-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-fugitive'
@@ -20,11 +21,13 @@ call plug#end()
 
 "========== vim-airline ==========
 
-" Use colorscheme nord
-let g:airline_theme='nord'
-
 " Enable tabline to show the tabs at the top of the window
 let g:airline#extensions#tabline#enabled = 1
+
+"========== vim-airline-theme ===========
+
+" Use colorscheme nord
+let g:airline_theme='bubblegum'
 
 
 "========== NERDTree ==========
