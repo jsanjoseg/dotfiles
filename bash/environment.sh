@@ -42,6 +42,8 @@ fi
 # Remap Caps_Lock to Ctrl
 if [[ $(command -v setxkbmap) ]]; then
     setxkbmap -layout us -option ctrl:nocaps
+else
+    echo "[bashrc]: Not possible to remap Caps_Lock to Ctrl: setxkbmap not found"
 fi
 
 # Restore original US keyboard layout
