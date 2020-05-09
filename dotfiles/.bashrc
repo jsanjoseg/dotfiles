@@ -9,21 +9,19 @@ dotfiles_dir="${HOME}/.dotfiles"
 # Source bash configuration files
 bash_dotfiles_dir="${dotfiles_dir}/bash"
 
+function walk_and_source() {
+    # Walk a directory recursively and source the content
+    local directory=$1
+    for file in "${directory}"/*; do
+        if [[ -f ${file} ]]; then
+            source "${file}"
+        elif [[ -d ${file} ]]; then
+            walk_and_source "${file}"
+        fi
+    done
+}
+
 if [[ -d "${bash_dotfiles_dir}" ]]; then
-    for file in "${bash_dotfiles_dir}"/*; do
-        if [[ -f ${file} ]]; then
-            source "${file}"
-        fi
-    done
+    walk_and_source "${bash_dotfiles_dir}"
 fi
 
-# Source external configuration files from dotfiles directory
-external_dotfiles_dir="${bash_dotfiles_dir}/external"
-
-if [[ -d "${external_dotfiles_dir}" ]]; then
-    for file in "${external_dotfiles_dir}"/*; do
-        if [[ -f ${file} ]]; then
-            source "${file}"
-        fi
-    done
-fi
