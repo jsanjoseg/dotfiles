@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Show git brach
+# Show git branch
 function parse_git_branch() {
     git branch --no-color 2>/dev/null | grep \* | sed "s/\* \(.*\)/ (\1)/"
 }
