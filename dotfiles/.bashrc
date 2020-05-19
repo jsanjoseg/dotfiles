@@ -8,6 +8,13 @@ dotfiles_dir="${HOME}/.dotfiles"
 
 # Source bash configuration files
 bash_dotfiles_dir="${dotfiles_dir}/bash"
+if [[ -d "${bash_dotfiles_dir}" ]]; then
+    for file in "${bash_dotfiles_dir}"/*; do
+        if [[ -f ${file} ]]; then
+            source "${file}"
+        fi
+    done
+fi
 
 function walk_and_source() {
     # Walk a directory recursively and source the content
@@ -21,7 +28,10 @@ function walk_and_source() {
     done
 }
 
-if [[ -d "${bash_dotfiles_dir}" ]]; then
-    walk_and_source "${bash_dotfiles_dir}"
+# Source external configuration files after the bash config files, so the
+# config will be overwritten by the external one.
+# Use walk and source, to source files inside directories as well.
+external_dotfiles_dir="${bash_dotfiles_dir}/external"
+if [[ -d "${external_dotfiles_dir}" ]]; then
+    walk_and_source "${external_dotfiles_dir}"
 fi
-
