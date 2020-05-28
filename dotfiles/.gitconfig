@@ -10,6 +10,3 @@
     st = status -uall
     br = branch
     df = diff
-[user]
-	email = javiersanjoseglez@gmail.com
-	name = Javier San Jose
