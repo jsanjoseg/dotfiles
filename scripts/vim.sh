@@ -15,23 +15,24 @@ function install_vim() {
                           gcc
                           make)
 
-    for package in "${basic_packages_list[@]}"; do
-        if ! check_package "${package}"; then
-            __log_info "${package}: Not installed"
-            packages_not_installed+=("${package}")
-            continue
-        fi
-    done
-
-    if [ ${#packages_not_installed[@]} -ne 0 ]; then
-        __log_warning "VIM 8: Basic packages are not installed. Skipping..."
-        __log_warning "       Please use --basic-packages in addition to -s vim"
-        __log_warning "       and also install mentioned packages"
-        return
-    fi
-
     if ! dpkg-query -W --showformat='${Version}\n' "vim"| grep "2:8." &> /dev/null; then
         __log_info "VIM 8: Not installed"
+
+        for package in "${basic_packages_list[@]}"; do
+            if ! check_package "${package}"; then
+                __log_info "${package}: Not installed"
+                packages_not_installed+=("${package}")
+                continue
+            fi
+        done
+
+        if [ ${#packages_not_installed[@]} -ne 0 ]; then
+            __log_warning "VIM 8: Basic packages are not installed. Skipping..."
+            __log_warning "       Please use --basic-packages in addition to -s vim"
+            __log_warning "       and also install mentioned packages"
+            return
+        fi
+
         echo
         echo "Downloading and compiling VIM 8"
         build_directory="${HOME}/vim8"
