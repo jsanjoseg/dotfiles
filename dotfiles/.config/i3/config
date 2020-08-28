@@ -119,8 +119,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -151,7 +149,8 @@ bindsym $mod+r mode "resize"
 # Move the complete workspace between monitors
 bindsym $mod+m move workspace to output left
 
-# Disable mouse warping, so i3 does not move the mouse when switching windows
+# Disable mouse warping, so i3 does not move the mouse to other workspaces
+# when switching to them
 mouse_warping none
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -166,9 +165,10 @@ bar {
 set $Locker i3lock -e -c 000000 && sleep 1
 
 # System menu (with options for lock, reboot...)
-set $mode_system System: (l) lock, (s) suspend, (r) reboot, (Shift+s) shutdown
+set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker && xset dpms force off, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
     bindsym r exec --no-startup-id reboot, mode "default"
     bindsym Shift+s exec --no-startup-id poweroff, mode "default"
@@ -179,7 +179,7 @@ mode "$mode_system" {
 }
 bindsym $mod+Escape mode "$mode_system"
 
-# Focus does not follow mouse
+# Focus does not follow mouse. To change the focus, click on the window.
 focus_follows_mouse no
 
 # Change desktop wallpaper color
@@ -208,14 +208,30 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 # Mute microphone
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
+# Brightness control
+#bindsym XF86MonBrightnessUp exec --no-startup-id
+#bindsym XF86MonBrightnessDown exec --no-startup-id
+
+# Move Pulse Secure to another workspace by default
+for_window [class="PulseUi"] move to workspace 11
+
 # Move Spotify to another workspace by default
 for_window [class="Spotify"] move to workspace 10
-
-# Move Pidgin to another workspace by default
-for_window [class="Pidgin"] move to workspace 9
 
 # Move Evolution to another workspace by default
 for_window [class="Evolution"] move to workspace 8
 
+# Move teams-for-linux to another workspace
+for_window [class="teams-for-linux"] move to workspace 9
+
 # Move Teams to another workspace by default
 for_window [class="Teams"] move to workspace 7
+
+# Move Wireshar to another workspace by default
+for_window [class="Wireshark"] move to workspace 6
+
+# Avoid Teams notifications to go to a new window
+#for_window [title="Microsoft Teams Notification"] floating enable
+
+# Move Teams notifications to another workspace by default
+#for_window [title="Microsoft Teams Notification"] move to workspace 7
