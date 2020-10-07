@@ -225,7 +225,7 @@ for_window [class="Evolution"] move to workspace 8
 for_window [class="teams-for-linux"] move to workspace 9
 
 # Move Teams to another workspace by default
-for_window [class="Teams"] move to workspace 7
+for_window [class="Teams"] move to workspace 9
 
 # Move Wireshar to another workspace by default
 for_window [class="Wireshark"] move to workspace 6
