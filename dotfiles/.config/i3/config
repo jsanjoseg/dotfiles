@@ -221,9 +221,6 @@ for_window [class="Spotify"] move to workspace 10
 # Move Evolution to another workspace by default
 for_window [class="Evolution"] move to workspace 8
 
-# Move teams-for-linux to another workspace
-for_window [class="teams-for-linux"] move to workspace 9
-
 # Move Teams to another workspace by default
 for_window [class="Teams"] move to workspace 9
 
@@ -231,7 +228,14 @@ for_window [class="Teams"] move to workspace 9
 for_window [class="Wireshark"] move to workspace 6
 
 # Avoid Teams notifications to go to a new window
-#for_window [title="Microsoft Teams Notification"] floating enable
+for_window [title="Microsoft Teams Notification"] floating enable
 
-# Move Teams notifications to another workspace by default
-#for_window [title="Microsoft Teams Notification"] move to workspace 7
+# Make Teams notifications floating windows
+for_window [title="Microsoft Teams Notification" class="microsoft teams - preview"] floating enable
+for_window [title="Microsoft Teams Notification" class="microsoft teams - preview"] move position 0 0
+for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
+for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] move position 0 0
+no_focus [title="Microsoft Teams Notification"]
+
+
+
