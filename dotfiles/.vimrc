@@ -24,7 +24,7 @@ syntax on
 colorscheme ron
 
 " Column limit highlight
-set colorcolumn=81
+set colorcolumn=101
 highlight ColorColumn ctermbg=darkgray
 
 " Put color on trailing whitespaces and tabs
