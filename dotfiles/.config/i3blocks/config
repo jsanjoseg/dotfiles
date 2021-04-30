@@ -24,7 +24,7 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=/usr/share/i3blocks/$BLOCK_NAME
+command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=10
 markup=none
 
@@ -56,6 +56,10 @@ interval=5
 
 # Bandwidth indicator
 [bandwidth]
+interval=5
+
+# VPN indicator
+[nm-vpn]
 interval=5
 
 # Battery indicator
