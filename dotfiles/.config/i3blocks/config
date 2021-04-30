@@ -34,9 +34,6 @@ markup=none
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-# Because a bug in the default volume script, mixer is not detected properly and is set to
-# "default". We have to indicate the mixer (pulse) through parameter, so mute/unmute works fine.
-command=/usr/share/i3blocks/volume 5% pulse
 label=VOL
 instance=Master
 signal=10
