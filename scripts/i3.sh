@@ -4,6 +4,7 @@ set -euo pipefail
 
 function install_i3() {
     install_packages i3
+    install_packages i3blocks
 }
 
 echo
