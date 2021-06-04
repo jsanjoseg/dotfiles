@@ -215,9 +215,9 @@ exec --no-startup-id autorandr --change
 # Audio configuration
 # Install pavucontrol to control audio devices graphically
 # Increase audio volume
-bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 2%+ && pkill -RTMIN+10 i3blocks
 ## Decrease audio volume
-bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 2%- && pkill -RTMIN+10 i3blocks
 ## Mute sound
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 # Mute microphone
