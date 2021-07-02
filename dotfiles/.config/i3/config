@@ -227,20 +227,17 @@ bindsym XF86AudioMicMute exec amixer -q -D pulse sset Capture toggle
 #bindsym XF86MonBrightnessUp exec --no-startup-id
 #bindsym XF86MonBrightnessDown exec --no-startup-id
 
-# Move Pulse Secure to another workspace by default
-for_window [class="PulseUi"] move to workspace 11
-
 # Move Spotify to another workspace by default
 for_window [class="Spotify"] move to workspace 10
+
+# Move Wireshark to another workspace by default
+for_window [class="Wireshark"] move to workspace 6
 
 # Move Evolution to another workspace by default
 for_window [class="Evolution"] move to workspace 8
 
 # Move Teams to another workspace by default
 for_window [class="Teams"] move to workspace 9
-
-# Move Wireshar to another workspace by default
-for_window [class="Wireshark"] move to workspace 6
 
 # Avoid Teams notifications to go to a new window
 for_window [title="Microsoft Teams Notification"] floating enable
@@ -251,6 +248,3 @@ for_window [title="Microsoft Teams Notification" class="microsoft teams - previe
 for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
 for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] move position 0 0
 no_focus [title="Microsoft Teams Notification"]
-
-
-
